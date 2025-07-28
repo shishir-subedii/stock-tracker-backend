@@ -5,11 +5,14 @@ import { UsersModule } from './user/user.module';
 import { AppConfigModule } from './common/config/config.module';
 import { DatabaseModule } from './database/database.module';
 import { JwtModule } from '@nestjs/jwt';
+import { JwtmoduleModule } from './common/jwtmodule/jwtmodule.module';
 import { ProductModule } from './product/product.module';
+import { CompanyModule } from './company/company.module';
+import { PublicApiModule } from './public-api/public-api.module';
 
 @Module({
   imports: [
-    DatabaseModule, UsersModule, AuthModule, AppConfigModule, ProductModule
+    DatabaseModule, UsersModule, AuthModule, AppConfigModule, JwtmoduleModule, ProductModule, CompanyModule, PublicApiModule
   ],
   providers: [],
 })
