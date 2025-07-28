@@ -27,8 +27,8 @@ async function bootstrap() {
   // Global Error Handler
   app.useGlobalFilters(new GlobalExceptionFilter());
   const config = new DocumentBuilder()
-    .setTitle('Docs for XYZ application')
-    .setDescription('API documentation for XYZ application')
+    .setTitle('Docs for Stock-Tracker application')
+    .setDescription('API documentation for Stock-Tracker application')
     .setVersion('1.0')
     .addBearerAuth(
       {
