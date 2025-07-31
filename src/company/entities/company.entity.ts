@@ -8,11 +8,17 @@ export class Company {
     @Column({ unique: true })
     name: string;
 
+    @Column('text')
+    description: string;
+
     @Column({ unique: true })
     apiKey: string;
 
     @Column()
     adminId: string;
+
+    @Column({ default: false })
+    isCurrentLoggedIn: boolean;
 
     @CreateDateColumn()
     createdAt: Date;

@@ -11,9 +11,6 @@ export class PublicUserDto {
     email: string;
 
     @ApiProperty()
-    role: string;
-
-    @ApiProperty()
     createdAt: Date;
 
     @ApiProperty()
