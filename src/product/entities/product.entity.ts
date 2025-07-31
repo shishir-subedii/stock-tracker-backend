@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+
 @Entity('products')
 export class Product {
     @PrimaryGeneratedColumn()
@@ -14,14 +15,19 @@ export class Product {
     price: number;
 
     @Column('int')
-    stock: number;
+    currentStock: number;
+
+    @Column('int')
+    totalRestocked: number;
 
     @Column('int')
     reorderLevel: number;
 
-    //use many to one later
     @Column()
     companyId: string;
+
+    @Column()
+    adminId: string;
 
     @CreateDateColumn()
     createdAt: Date;

@@ -47,7 +47,6 @@ export class CompanyService {
     return this.companyRepo.remove(company);
   }
   async findCurrentLoggedInCompany(adminId: string) {
-    console.log('Finding current logged in company for admin:', adminId);
 
     const company = await this.companyRepo.findOne({
       where: { adminId },
