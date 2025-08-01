@@ -28,18 +28,18 @@ export class ProductService {
     return this.productRepo.find({ where: { companyId, adminId } });
   }
 
-  async findOne(id: number, adminId: string) {
+  async findOne(id: string, adminId: string) {
     const product = await this.productRepo.findOne({ where: { id, adminId } });
     if (!product) throw new NotFoundException('Product not found');
     return product;
   }
 
-  async update(id: number, dto: UpdateProductDto, adminId: string) {
+  async update(id: string, dto: UpdateProductDto, adminId: string) {
     await this.productRepo.update({ id, adminId }, dto);
     return this.findOne(id, adminId);
   }
 
-  async remove(id: number, adminId: string) {
+  async remove(id: string, adminId: string) {
     const result = await this.productRepo.delete({ id, adminId });
     if (!result.affected) throw new NotFoundException('Product not found');
     return { deleted: true };
